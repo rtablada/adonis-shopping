@@ -21,6 +21,7 @@
     "adonis-lucid": "^3.0.10",
     "adonis-middleware": "^1.0.8",
     "node-notifier": "^4.6.1",
+    "sqlite": "^2.2.2",
     "standard": "^8.4.0",
     "tiny-lr": "^1.0.3",
     "youch": "^1.0.1"

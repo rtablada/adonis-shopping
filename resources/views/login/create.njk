@@ -7,28 +7,28 @@
         <div class="card-header">
           <h2 class="card-header-title">Login</h2>
         </div>
-        <div class="card-content">
-          {{ form.open({ action: 'LoginController.store' }) }}
+        {{ form.open({ action: 'LoginController.store' }) }}
 
-          {{ csrfField }}
+          <div class="card-content">
+            {{ csrfField }}
 
-          <div class="control">
-            {{ form.label('email', 'Email') }}
-            {{ form.text('email', null, { class: 'input', placeholder: 'Email' }) }}
+            <div class="control">
+              {{ form.label('email', 'Email') }}
+              {{ form.text('email', null, { class: 'input', placeholder: 'Email' }) }}
+            </div>
+
+            <div class="control">
+              {{ form.label('password', 'Password') }}
+              {{ form.password('password', null, { class: 'input', placeholder: 'Password' }) }}
+            </div>
           </div>
 
-          <div class="control">
-            {{ form.label('password', 'Password') }}
-            {{ form.password('password', null, { class: 'input', placeholder: 'Password' }) }}
+          <div class="card-footer">
+            <a href="/register" class="card-footer-item">Register</a>
+            <button class="card-footer-item">Login</button>
           </div>
 
-          <p class="control">
-            <a href="/register" class="button">Register</a>
-            {{ form.submit('Login', null, { class: 'button is-primary' }) }}
-          </p>
-
-          {{ form.close() }}
-        </div>
+        {{ form.close() }}
       </div>
     </div>
   </div>

@@ -10,33 +10,43 @@
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
   <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css">
+
+  <style media="screen">
+    button.card-footer-item {
+      background: 0;
+      border: 0;
+      font: inherit;
+
+      background: #00d1b2;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
   <nav class="nav has-shadow">
-    <h1 class="nav-left">
-      <a href="/" class="nav-item is-brand">Shopping</a>
-    </h1>
+    <div class="container">
+      <h1 class="nav-left">
+        <a href="/" class="nav-item is-brand">Shopping</a>
+      </h1>
 
-    <div class="nav-right nav-menu">
-      <a href="/" class="nav-item">Home</a>
-      {% if currentUser %}
-        <a href="/shop" class="nav-item">Shop</a>
+      <div class="nav-right nav-menu">
+        <a href="/" class="nav-item">Home</a>
+        {% if currentUser %}
+          <a href="/shop" class="nav-item">Shop</a>
 
-        <a href="/my-orders" class="nav-item">Orders</a>
-      {% else %}
-        <a href="/login" class="nav-item">Login</a>
+          <a href="/my-orders" class="nav-item">Orders</a>
+        {% else %}
+          <a href="/login" class="nav-item">Login</a>
 
-        <a href="/register" class="nav-item">Sign Up</a>
-      {% endif %}
+          <a href="/register" class="nav-item">Sign Up</a>
+        {% endif %}
+      </div>
     </div>
   </nav>
   <div class="section">
     <div class="container">
       {% if old('error') %}
       <article class="message is-danger">
-        <div class="message-header">
-          Danger
-        </div>
         <div class="message-body">
           {{ old('error') }}
         </div>
@@ -45,9 +55,6 @@
 
       {% if old('success') %}
       <article class="message is-primary">
-        <div class="message-header">
-          Success
-        </div>
         <div class="message-body">
           {{ old('success') }}
         </div>

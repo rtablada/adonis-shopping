@@ -7,33 +7,33 @@
         <div class="card-header">
           <h2 class="card-header-title">Register</h2>
         </div>
-        <div class="card-content">
-          {{ form.open({ action: 'UserController.store' }) }}
+        {{ form.open({ action: 'UserController.store' }) }}
 
-          {{ csrfField }}
+          <div class="card-content">
+            {{ csrfField }}
 
-          <div class="control">
-            {{ form.label('email', 'Email') }}
-            {{ form.text('email', null, { class: 'input', placeholder: 'Email' }) }}
+            <div class="control">
+              {{ form.label('email', 'Email') }}
+              {{ form.text('email', null, { class: 'input', placeholder: 'Email' }) }}
+            </div>
+
+            <div class="control">
+              {{ form.label('password', 'Password') }}
+              {{ form.password('password', null, { class: 'input', placeholder: 'Password' }) }}
+            </div>
+
+            <div class="control">
+              {{ form.label('password_confirmation', 'Confirm Password') }}
+              {{ form.password('password_confirmation', null, { class: 'input', placeholder: 'Confirm Password' }) }}
+            </div>
           </div>
 
-          <div class="control">
-            {{ form.label('password', 'Password') }}
-            {{ form.password('password', null, { class: 'input', placeholder: 'Password' }) }}
+          <div class="card-footer">
+            <a href="/login" class="card-footer-item">Login</a>
+            <button class="card-footer-item">Register</button>
           </div>
 
-          <div class="control">
-            {{ form.label('password_confirmation', 'Confirm Password') }}
-            {{ form.password('password_confirmation', null, { class: 'input', placeholder: 'Confirm Password' }) }}
-          </div>
-
-          <p class="control">
-            <a href="/login" class="button">Login</a>
-            {{ form.submit('Register', null, { class: 'button is-primary' }) }}
-          </p>
-
-          {{ form.close() }}
-        </div>
+        {{ form.close() }}
       </div>
     </div>
   </div>
