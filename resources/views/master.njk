@@ -31,7 +31,31 @@
     </div>
   </nav>
   <div class="section">
-    <div class="container">{% block content %}{% endblock %}</div>
+    <div class="container">
+      {% if old('error') %}
+      <article class="message is-danger">
+        <div class="message-header">
+          Danger
+        </div>
+        <div class="message-body">
+          {{ old('error') }}
+        </div>
+      </article>
+      {% endif %}
+
+      {% if old('success') %}
+      <article class="message is-primary">
+        <div class="message-header">
+          Success
+        </div>
+        <div class="message-body">
+          {{ old('success') }}
+        </div>
+      </article>
+      {% endif %}
+
+      {% block content %}{% endblock %}
+    </div>
   </div>
 </body>
 </html>
