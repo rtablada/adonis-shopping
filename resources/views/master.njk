@@ -19,8 +19,15 @@
 
     <div class="nav-right nav-menu">
       <a href="/" class="nav-item">Home</a>
-      <a href="/shop" class="nav-item">Shop</a>
-      <a href="/my-orders" class="nav-item">Orders</a>
+      {% if currentUser %}
+        <a href="/shop" class="nav-item">Shop</a>
+
+        <a href="/my-orders" class="nav-item">Orders</a>
+      {% else %}
+        <a href="/login" class="nav-item">Login</a>
+
+        <a href="/register" class="nav-item">Sign Up</a>
+      {% endif %}
     </div>
   </nav>
   <div class="section">

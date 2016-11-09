@@ -1,0 +1,35 @@
+{% extends "master" %}
+
+{% block content %}
+  <div class="columns">
+    <div class="column is-half is-offset-3">
+      <div class="card is-fullwidth">
+        <div class="card-header">
+          <h2 class="card-header-title">Login</h2>
+        </div>
+        <div class="card-content">
+          {{ form.open({ action: 'LoginController.store' }) }}
+
+          {{ csrfField }}
+
+          <div class="control">
+            {{ form.label('email', 'Email') }}
+            {{ form.text('email', null, { class: 'input', placeholder: 'Email' }) }}
+          </div>
+
+          <div class="control">
+            {{ form.label('password', 'Password') }}
+            {{ form.password('password', null, { class: 'input', placeholder: 'Password' }) }}
+          </div>
+
+          <p class="control">
+            <a href="/register" class="button">Register</a>
+            {{ form.submit('Login', null, { class: 'button is-primary' }) }}
+          </p>
+
+          {{ form.close() }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
