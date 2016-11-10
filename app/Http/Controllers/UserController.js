@@ -10,12 +10,11 @@ class UserController {
 
   * store(request, response) {
     // Grabbing inputs
-    const { username, email, password } = request.all();
+    const { email, password } = request.all();
 
     try {
       // Save the user
       const user = yield User.create({
-        username,
         email,
         password: yield Hash.make(password),
       });

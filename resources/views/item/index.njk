@@ -7,13 +7,13 @@
         <div class="card is-fullwidth">
           <div class="card-image">
             <figure class="image is-square">
-              <img src="{{ item.image_url }}" alt="">
+              <img src="{{ item.image_url }}" alt="{{ item.name }}">
             </figure>
           </div>
 
           <div class="card-content">
             <h2 class="title is-2">{{ item.name }}</h2>
-            <h3 class="subtitle">{{ item.price }}</h3>
+            <h3 class="subtitle">${{ item.price }}</h3>
           </div>
 
           <form class="card-footer" action="/buy/{{ item.id }}" method="POST">

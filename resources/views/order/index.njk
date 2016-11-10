@@ -1,0 +1,24 @@
+{% extends "master" %}
+
+{% block content %}
+  <div class="columns">
+    {% for order in orders %}
+      <div class="column is-half">
+        <div class="card is-fullwidth">
+          <div class="card-image">
+            <figure class="image is-square">
+              <img src="{{ order.item.image_url }}" alt="{{ order.item.name }}">
+            </figure>
+          </div>
+
+          <div class="card-content">
+            <h2 class="title is-2">{{ order.item.name }}</h2>
+            <h3 class="subtitle">${{ order.item.price }}</h3>
+            <h3 class="subtitle">${{ order.created_at }}</h3>
+            <h3 class="subtitle">${{ order.user.email }}</h3>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

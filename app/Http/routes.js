@@ -24,3 +24,9 @@ Route.post('/register', 'UserController.store')
 
 Route.get('/login', 'LoginController.create')
 Route.post('/login', 'LoginController.store')
+
+Route.resource('/store', 'ItemController')
+
+Route.post('/buy/:id', 'OrderController.store')
+
+Route.get('/my-orders', 'OrderController.index')

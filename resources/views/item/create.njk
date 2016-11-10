@@ -1,0 +1,38 @@
+{% extends "master" %}
+
+{% block content %}
+  <div class="columns">
+    <div class="column is-half is-offset-3">
+      <div class="card is-fullwidth">
+        <div class="card-header">
+          <h2 class="card-header-title">List New Item</h2>
+        </div>
+        {{ form.open({ action: 'ItemController.store' }) }}
+
+          <div class="card-content">
+            {{ csrfField }}
+
+            <div class="control">
+              {{ form.label('name', 'Name') }}
+              {{ form.text('name', null, { class: 'input', placeholder: 'Name' }) }}
+            </div>
+            <div class="control">
+              {{ form.label('image_url', 'Image Url') }}
+              {{ form.text('image_url', null, { class: 'input', placeholder: 'Image Url' }) }}
+            </div>
+            <div class="control">
+              {{ form.label('price', 'Price') }}
+              {{ form.text('price', null, { class: 'input', placeholder: 'Price' }) }}
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <a href="/store" class="card-footer-item">Back</a>
+            <button class="card-footer-item">List</button>
+          </div>
+
+        {{ form.close() }}
+      </div>
+    </div>
+  </div>
+{% endblock %}
